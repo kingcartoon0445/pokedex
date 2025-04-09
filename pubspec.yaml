@@ -1,0 +1,72 @@
+name: pokedex
+description: A new Flutter project using BLoC, Dio and Easy Localization.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # UI
+  cupertino_icons: ^1.0.5
+  flutter_svg: ^2.0.6
+  
+  # Đa ngôn ngữ
+  easy_localization: ^3.0.2
+  
+  # State Management
+  flutter_bloc: ^8.1.3
+  bloc: ^8.1.2
+  equatable: ^2.0.5
+  
+  # Network
+  dio: ^5.2.1+1
+  pretty_dio_logger: ^1.3.1
+  json_annotation: ^4.8.1 
+  # Dependency Injection
+  get_it: ^7.6.0
+  
+  # Storage
+  shared_preferences: ^2.2.0
+  
+  # Utils
+  intl: ^0.19.0
+  logger: ^1.4.0
+  image: ^4.5.4
+  path_provider: ^2.1.5
+  sqflite: ^2.4.2
+   
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_gen_runner: ^5.10.0
+  # Linting
+  flutter_lints: ^2.0.2
+  
+  # Code Generation
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  
+  # Asset Generation
+  flutter_gen: ^5.3.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/pokemondb.sql
+    - assets/images/
+    - assets/translations/
+    - assets/images/types/
+    - assets/images/types/background/
+    - assets/images/icons/
+    - assets/images/generation/
+
+flutter_gen:
+  output: lib/generated/
+  line_length: 80
+  
+  integrations:
+    flutter_svg: true

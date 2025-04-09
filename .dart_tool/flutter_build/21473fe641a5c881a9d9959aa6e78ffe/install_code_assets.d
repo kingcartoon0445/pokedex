@@ -1,0 +1,1 @@
+ /Users/leduy/Documents/pokedex/.dart_tool/flutter_build/21473fe641a5c881a9d9959aa6e78ffe/native_assets.json: 

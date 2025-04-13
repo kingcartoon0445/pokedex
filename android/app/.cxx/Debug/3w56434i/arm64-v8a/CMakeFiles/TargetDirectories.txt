@@ -1,0 +1,2 @@
+D:/work/company/tnkas/pokedex/android/app/.cxx/Debug/3w56434i/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/work/company/tnkas/pokedex/android/app/.cxx/Debug/3w56434i/arm64-v8a/CMakeFiles/rebuild_cache.dir

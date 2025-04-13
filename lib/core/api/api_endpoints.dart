@@ -25,6 +25,7 @@ class ApiEndpoints {
   static String urlPokemoneMoves(String idOrName) => 'move/$idOrName';
   //Để lấy thông tin chi tiết về các abilities
   static String urlPokemoneAbility(String idOrName) => 'ability/$idOrName';
+  static String urlPokemoneType(String typeIdOrName) => 'type/$typeIdOrName';
 
   // User
   static const String userProfile = '/users/profile';

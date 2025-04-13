@@ -1,10 +1,7 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:pokedex/core/error/exceptions.dart';
 import 'package:pokedex/data/datasources/local/storage_service.dart';
 import 'package:pokedex/data/datasources/remote/api_service.dart';
-import 'package:pokedex/data/models/detail_pokemon_model.dart';
-import 'package:pokedex/data/models/list_pokemon_model.dart';
 import 'package:pokedex/data/models/user_model.dart';
 
 class PokemonRepository {
@@ -163,6 +160,19 @@ class PokemonRepository {
       final response =
           await apiService.apiAllDetailPokemon(getDetailPokemon.toString());
       return response;
+    } on DioException catch (e) {
+      throw ServerException(
+        message: e.response?.data['message'] ?? 'Lỗi lấy thông tin',
+        statusCode: e.response?.statusCode ?? 0,
+      );
+    }
+  }
+
+  Future<Map<String, dynamic>> getPokemoneType(String typeIdOrName) async {
+    try {
+      final response =
+          await apiService.apiPokemoneType(typeIdOrName.toString());
+      return response.data;
     } on DioException catch (e) {
       throw ServerException(
         message: e.response?.data['message'] ?? 'Lỗi lấy thông tin',

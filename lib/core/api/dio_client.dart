@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import '../../../config/app_config.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'interceptors/auth_interceptor.dart';
-import 'dart:developer' as developer;
 
 class DioClient {
   late final Dio _dio;
@@ -35,25 +34,12 @@ class DioClient {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          // developer.log(
-          //     'REQUEST[${options.method}] => URL: ${options.baseUrl}${options.path}',
-          //     name: 'DioClient');
-          // developer.log('REQUEST BODY: ${options.data}', name: 'DioClient');
-
           return handler.next(options);
         },
         onResponse: (response, handler) {
-          // developer.log(
-          //     'RESPONSE[${response.statusCode}] => URL: ${response.requestOptions.baseUrl}${response.requestOptions.path}',
-          //     name: 'DioClient');
-          // developer.log('RESPONSE BODY: ${response.data}', name: 'DioClient');
           return handler.next(response);
         },
         onError: (DioException e, handler) {
-          // developer.log(
-          //     'ERROR[${e.response?.statusCode}] => URL: ${e.requestOptions.baseUrl}${e.requestOptions.path}',
-          //     name: 'DioClient');
-          // developer.log('ERROR MESSAGE: ${e.message}', name: 'DioClient');
           return handler.next(e);
         },
       ),

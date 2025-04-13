@@ -321,26 +321,28 @@ class _PokemonListScreenState extends State<HomeScreen> {
                       )
                     : SliverList(
                         delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          if (index == pokemonList.length) {
-                            return const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 16.0),
-                              child: Center(child: CircularProgressIndicator()),
-                            );
-                          }
+                          (context, index) {
+                            if (index == pokemonList.length) {
+                              return const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 16.0),
+                                child:
+                                    Center(child: CircularProgressIndicator()),
+                              );
+                            }
 
-                          final pokemon = pokemonList[index];
-                          return Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: ItemPokemon(
-                              pokemon: pokemon,
-                            ),
-                          );
-                        },
-                        childCount: pokemonList.length +
-                            (state.status == HomeStatus.loading ? 1 : 0),
-                      )),
+                            final pokemon = pokemonList[index];
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: ItemPokemon(
+                                pokemon: pokemon,
+                              ),
+                            );
+                          },
+                          childCount: pokemonList.length +
+                              (state.status == HomeStatus.loading ? 1 : 0),
+                        ),
+                      ),
                 // Danh sách Pokemon
 
                 // ListView.builder(

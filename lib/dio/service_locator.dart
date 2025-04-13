@@ -6,6 +6,7 @@ import 'package:pokedex/data/repositories/user_repository.dart';
 import 'package:pokedex/presentation/blocs/home/home_bloc.dart';
 import 'package:pokedex/presentation/blocs/pokemon_detail/pokemon_detail_bloc.dart';
 import 'package:pokedex/presentation/blocs/theme/theme_bloc.dart';
+import 'package:pokedex/presentation/blocs/type_detail/type_detail_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // Khởi tạo GetIt singleton
@@ -37,6 +38,8 @@ Future<void> setupServiceLocator() async {
       () => HomeBloc(pokemonRepository: getIt<PokemonRepository>()));
   getIt.registerFactory<PokemonDetailBloc>(
       () => PokemonDetailBloc(pokemonRepository: getIt<PokemonRepository>()));
+  getIt.registerFactory<TypeDetailBloc>(
+      () => TypeDetailBloc(pokemonRepository: getIt<PokemonRepository>()));
 
   // getIt.registerFactory<AuthBloc>(
   //     () => AuthBloc(userRepository: getIt<UserRepository>()));

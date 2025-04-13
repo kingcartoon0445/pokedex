@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +10,7 @@ import 'package:pokedex/data/model_db/moves_model.dart';
 import 'package:pokedex/data/repositories/user_repository.dart';
 import 'package:pokedex/presentation/blocs/pokemon_detail/pokemon_detail_event.dart';
 import 'package:pokedex/presentation/blocs/pokemon_detail/pokemon_detail_state.dart';
-import 'package:pokedex/presentation/screens/%20pokemon_detail/detail_pokemon_model.dart';
+import 'package:pokedex/presentation/screens/pokemon_detail/detail_pokemon_model.dart';
 
 class PokemonDetailBloc extends Bloc<PokemonDetailEvent, PokemonDetailState> {
   final PokemonRepository pokemonRepository;
@@ -96,7 +95,7 @@ class PokemonDetailBloc extends Bloc<PokemonDetailEvent, PokemonDetailState> {
     List<Moves> listMoves = detailPokemonModel.listMoves ?? [];
     emit(const PokemonDetailState(
       // detailPokemonModel: detailPokemonModel,
-      status: PokemonDetailStatus.loading,
+      status: BlocPokemonStatus.loading,
     ));
     final responseList = await pokemonRepository.getAllDetailPokemon(event.id);
 // Xử lý danh sách skill pokemon
@@ -143,14 +142,14 @@ class PokemonDetailBloc extends Bloc<PokemonDetailEvent, PokemonDetailState> {
     // Hoàn thành quá trình tải dữ liệu
     emit(PokemonDetailState(
       detailPokemonModel: detailPokemonModel,
-      status: PokemonDetailStatus.loaded,
+      status: BlocPokemonStatus.loaded,
     ));
     // } catch (e) {
     //   // Xử lý lỗi tổng thể
     //   print('Lỗi tổng thể khi tải danh sách Pokemon: $e');
     //   emit(PokemonDetailState(
     //     detailPokemonModel: state.detailPokemonModel,
-    //     status: PokemonDetailStatus.error,
+    //     status: BlocPokemonStatus.error,
     //     error: e.toString(),
     //   ));
     // }

@@ -4,7 +4,7 @@ import 'package:pokedex/core/string_formatter.dart';
 import 'package:pokedex/data/model_db/pokemon_model.dart';
 import 'package:pokedex/data/models/type_model.dart';
 import 'package:pokedex/import_global.dart';
-import 'package:pokedex/presentation/screens/%20pokemon_detail/pokemon_detail.dart';
+import 'package:pokedex/presentation/screens/pokemon_detail/pokemon_detail.dart';
 import 'package:pokedex/presentation/screens/type_detail/type_detail_screen.dart';
 
 class ItemPokemon extends StatelessWidget {
@@ -127,7 +127,10 @@ class _WidgetItemTypeState extends State<WidgetItemType> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const TypeDetailScreen()),
+          MaterialPageRoute(
+              builder: (context) => WaterElementScreen(
+                    typeModel: widget.typeModel,
+                  )),
         );
       },
       child: Container(
@@ -161,7 +164,7 @@ class _WidgetItemTypeState extends State<WidgetItemType> {
                   style: TextStyle(
                       fontSize: 14 * widget.scale,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black),
+                      color: Colors.white),
                 ),
               ),
             ),

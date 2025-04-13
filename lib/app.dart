@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/config/routes.dart';
 import 'package:pokedex/dio/service_locator.dart';
-import 'package:pokedex/presentation/blocs/auth/auth_bloc.dart';
 import 'package:pokedex/presentation/blocs/home/home_bloc.dart';
 import 'package:pokedex/presentation/blocs/pokemon_detail/pokemon_detail_bloc.dart';
 import 'package:pokedex/presentation/blocs/theme/theme_bloc.dart';
-import 'package:pokedex/presentation/screens/auth/login_screen.dart';
+import 'package:pokedex/presentation/blocs/type_detail/type_detail_bloc.dart';
 import 'package:pokedex/presentation/screens/home/home_screen.dart';
 
 import 'presentation/blocs/theme/theme_state.dart';
@@ -25,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<PokemonDetailBloc>(
           create: (_) => getIt<PokemonDetailBloc>(),
+        ),
+        BlocProvider<TypeDetailBloc>(
+          create: (_) => getIt<TypeDetailBloc>(),
         ),
         BlocProvider<HomeBloc>(
           create: (_) => getIt<HomeBloc>(),

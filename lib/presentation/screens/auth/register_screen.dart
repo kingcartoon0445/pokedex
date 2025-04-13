@@ -1,12 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/config/routes.dart';
-import 'package:pokedex/presentation/blocs/auth/auth_bloc.dart';
-import 'package:pokedex/presentation/blocs/auth/auth_event.dart';
-import 'package:pokedex/presentation/blocs/auth/auth_state.dart';
-import 'package:pokedex/presentation/widget/buttons/primary_button.dart';
-import 'package:pokedex/presentation/widget/loading_indicator.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);

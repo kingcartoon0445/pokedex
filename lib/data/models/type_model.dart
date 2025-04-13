@@ -9,25 +9,14 @@ class TypeModel {
   Color colorBackGround;
   SvgGenImage icon;
   SvgGenImage backGround;
-  List<TypeModel> doubleDamageFrom = [];
-  List<TypeModel> doubleDamageTo = [];
-  List<TypeModel> halfDamageFrom = [];
-  List<TypeModel> halfDamageTo = [];
-  List<TypeModel> noDamageFrom = [];
-  List<TypeModel> noDamageTo = [];
-  TypeModel(
-      {required this.value,
-      required this.name,
-      required this.color,
-      required this.colorBackGround,
-      required this.icon,
-      required this.backGround,
-      this.doubleDamageFrom = const [],
-      this.doubleDamageTo = const [],
-      this.halfDamageFrom = const [],
-      this.halfDamageTo = const [],
-      this.noDamageFrom = const [],
-      this.noDamageTo = const []});
+  TypeModel({
+    required this.value,
+    required this.name,
+    required this.color,
+    required this.colorBackGround,
+    required this.icon,
+    required this.backGround,
+  });
   // Static method to get a TypeModel by its value string
   static TypeModel getType(String type) {
     // Convert to lowercase for case-insensitive comparison
